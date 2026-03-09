@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -24,7 +25,7 @@ public class TransactionsEntity {
     @Column(name = "amount")
     private BigDecimal amount;
     @Column(name = "created")
-    private Timestamp created;
+    private LocalDateTime created;
     @Column(name = "credit")
     private String credit;
     @Column(name = "debit_currency_id")
@@ -40,7 +41,7 @@ public class TransactionsEntity {
     @Column(name = "type")
     private String type;
     @Column(name = "updated")
-    private Timestamp updated;
+    private LocalDateTime updated;
     @Column(name = "payment_id")
     private String paymentId;
     @Column(name = "credit_currency_id")

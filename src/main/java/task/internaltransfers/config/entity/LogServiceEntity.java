@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -30,7 +31,7 @@ public class LogServiceEntity {
     private String response;
 
     @Column(name = "log_date_time", insertable = false, updatable = false)
-    private Timestamp logDateTime;
+    private LocalDateTime logDateTime;
 
     @Column(name = "transaction_id")
     private Long transactionId;

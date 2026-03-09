@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -25,7 +26,7 @@ public class PaymentsEntity {
     @Column(name = "amount")
     private BigDecimal amount;
     @Column(name = "created")
-    private Timestamp created;
+    private LocalDateTime created;
     @Column(name = "currency_id")
     private Integer currencyId;
     @Column(name = "operator_payment_id")
@@ -37,7 +38,7 @@ public class PaymentsEntity {
     @Column(name = "status")
     private String status;
     @Column(name = "updated")
-    private Timestamp updated;
+    private LocalDateTime updated;
     @Column(name = "operation_date")
     private Date operationDate;
 
