@@ -16,31 +16,35 @@ import java.util.Objects;
 @AllArgsConstructor
 @Table(name = "log_service", schema = "public")
 public class LogServiceEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
-    private long id;
-    @Column(name = "command")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "command", nullable = false)
     private String command;
-    @Column(name = "request_response")
-    private String requestResponse;
-    @Column(name = "log_date_time")
+
+    @Column(name = "request")
+    private String request;
+
+    @Column(name = "response")
+    private String response;
+
+    @Column(name = "log_date_time", insertable = false, updatable = false)
     private Timestamp logDateTime;
-    @Column(name = "ip")
-    private String ip;
+
     @Column(name = "transaction_id")
     private Long transactionId;
+
     @Column(name = "requisite")
     private String requisite;
-    @Column(name = "status")
+
+    @Column(name = "status", nullable = false)
     private String status;
-    @Column(name = "inner_code")
+
+    @Column(name = "inner_code", nullable = false)
     private String innerCode;
-    @Column(name = "inner_message")
+
+    @Column(name = "inner_message", nullable = false)
     private String innerMessage;
-    @Column(name = "provider_code")
-    private String providerCode;
-    @Column(name = "provider_message")
-    private String providerMessage;
 
 }
