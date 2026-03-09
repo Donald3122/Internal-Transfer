@@ -17,6 +17,8 @@ public class RequestDto {
     private String fromAccount;
     @JsonProperty("toAccount")
     private String toAccount;
+    @JsonProperty("transaction")
+    private String transaction;
     @JsonProperty("amount")
     private BigDecimal amount;
 }

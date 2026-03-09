@@ -24,7 +24,7 @@ public class TransactionsEntity {
     private long id;
     @Column(name = "amount")
     private BigDecimal amount;
-    @Column(name = "created")
+    @Column(name = "created",insertable = false, updatable = false)
     private LocalDateTime created;
     @Column(name = "credit")
     private String credit;
@@ -40,7 +40,7 @@ public class TransactionsEntity {
     private String status;
     @Column(name = "type")
     private String type;
-    @Column(name = "updated")
+    @Column(name = "updated",insertable = false, updatable = false)
     private LocalDateTime updated;
     @Column(name = "payment_id")
     private String paymentId;

@@ -25,19 +25,17 @@ public class PaymentsEntity {
     private String id;
     @Column(name = "amount")
     private BigDecimal amount;
-    @Column(name = "created")
+    @Column(name = "created", insertable = false, updatable = false)
     private LocalDateTime created;
     @Column(name = "currency_id")
     private Integer currencyId;
     @Column(name = "operator_payment_id")
     private String operatorPaymentId;
-    @Column(name = "purpose")
-    private String purpose;
     @Column(name = "requisite")
     private String requisite;
     @Column(name = "status")
     private String status;
-    @Column(name = "updated")
+    @Column(name = "updated", insertable = false, updatable = false)
     private LocalDateTime updated;
     @Column(name = "operation_date")
     private Date operationDate;
