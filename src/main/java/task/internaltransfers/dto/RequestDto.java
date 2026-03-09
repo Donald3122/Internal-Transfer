@@ -15,8 +15,12 @@ import java.math.BigDecimal;
 public class RequestDto {
     @JsonProperty("fromAccount")
     private String fromAccount;
+    @JsonProperty("fromCurrency")
+    private int fromCurrency;
     @JsonProperty("toAccount")
     private String toAccount;
+    @JsonProperty("toCurrency")
+    private int toCurrency;
     @JsonProperty("transaction")
     private String transaction;
     @JsonProperty("amount")

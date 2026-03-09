@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -30,6 +31,7 @@ public class AccountsEntity {
     private long currencyId;
     @Column(name = "status")
     private String status;
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     @Column(name = "customer_id")

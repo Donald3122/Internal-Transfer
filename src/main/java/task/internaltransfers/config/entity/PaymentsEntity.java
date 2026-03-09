@@ -1,31 +1,32 @@
 package task.internaltransfers.config.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "payments", schema = "public")
 public class PaymentsEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @GeneratedValue
+    @UuidGenerator
     private String id;
     @Column(name = "amount")
     private BigDecimal amount;
-    @Column(name = "created", insertable = false, updatable = false)
+    @CreationTimestamp
+    @Column(name = "created")
     private LocalDateTime created;
     @Column(name = "currency_id")
     private Integer currencyId;
@@ -35,9 +36,8 @@ public class PaymentsEntity {
     private String requisite;
     @Column(name = "status")
     private String status;
-    @Column(name = "updated", insertable = false, updatable = false)
+    @UpdateTimestamp
+    @Column(name = "updated")
     private LocalDateTime updated;
-    @Column(name = "operation_date")
-    private Date operationDate;
 
 }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -30,7 +31,8 @@ public class LogServiceEntity {
     @Column(name = "response")
     private String response;
 
-    @Column(name = "log_date_time", insertable = false, updatable = false)
+    @CreationTimestamp
+    @Column(name = "log_date_time")
     private LocalDateTime logDateTime;
 
     @Column(name = "transaction_id")

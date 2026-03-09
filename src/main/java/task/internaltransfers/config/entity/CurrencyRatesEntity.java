@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -26,6 +27,7 @@ public class CurrencyRatesEntity {
     private long currencyId;
     @Column(name = "rate_to_base")
     private BigDecimal rateToBase;
+    @CreationTimestamp
     @Column(name = "created")
     private LocalDateTime created;
 
