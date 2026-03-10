@@ -26,8 +26,8 @@ public class StatementController {
             @PathVariable String accountNumber,
             @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
             @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "20") int size
+            @RequestParam int page,
+            @RequestParam int size
     ) {
         Pageable pageable = PageRequest.of(page, size);
         return statementService.getAccountStatement(accountNumber, from, to, pageable);

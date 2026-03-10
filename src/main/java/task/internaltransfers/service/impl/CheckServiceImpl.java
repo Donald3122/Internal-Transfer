@@ -28,6 +28,7 @@ public class CheckServiceImpl implements CheckService {
         try{
             List<AccountsEntity> accounts = accountRepository.findByCustomerId(customerId);
             if(accounts.isEmpty()){
+                logger.saveLogService("Check",customerId,"null",null,customerId,"Failed",String.valueOf(ResponseCode.REQUISITE_NOT_FOUND.getCode()), ResponseCode.REQUISITE_NOT_FOUND.getComment());
                 return ResponseUtil.builderCustomResponse(ResponseCode.REQUISITE_NOT_FOUND.getCode(),ResponseCode.REQUISITE_NOT_FOUND.getComment());
             }
             List<AccountDto> accountDto = accounts.stream()
@@ -35,8 +36,13 @@ public class CheckServiceImpl implements CheckService {
                     .toList();
 
             ResponseDto responseDto = ResponseUtil.builderResponse(ResponseCode.SUCCESS.getCode(), ResponseCode.SUCCESS.getComment(),"Accounts found",accountDto);
+            logger.saveLogService("Check",customerId,responseDto.getResponse().toString(),null,customerId,"Success",String.valueOf(ResponseCode.SUCCESS.getCode()), ResponseCode.SUCCESS.getComment());
+
+            log.info("Что внутри customersId = {}",responseDto.toString());
             return responseDto;
         }catch (Exception e){
+            logger.saveLogService("Check",customerId,"null",null,customerId,"Failed",String.valueOf(ResponseCode.INTERNAL_SERVER_ERROR.getCode()), ResponseCode.INTERNAL_SERVER_ERROR.getComment());
+
             return ResponseUtil.builderCustomResponse(ResponseCode.INTERNAL_SERVER_ERROR.getCode(), ResponseCode.INTERNAL_SERVER_ERROR.getComment());
         }
     }

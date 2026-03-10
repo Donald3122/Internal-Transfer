@@ -22,27 +22,27 @@ public class LogServiceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "command", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "command")
     private String command;
 
-    @Column(name = "request", columnDefinition = "TEXT")
+    @Column(name = "request")
     private String request;
 
-    @Column(name = "response", columnDefinition = "TEXT")
+    @Column(name = "response",columnDefinition = "TEXT")
     private String response;
     @Column(name = "transaction_id")
     private Long transactionId;
 
-    @Column(name = "requisite", columnDefinition = "TEXT")
+    @Column(name = "requisite")
     private String requisite;
 
-    @Column(name = "status", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "status")
     private String status;
 
-    @Column(name = "inner_code", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "inner_code")
     private String innerCode;
 
-    @Column(name = "inner_message", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "inner_message")
     private String innerMessage;
 
 }
