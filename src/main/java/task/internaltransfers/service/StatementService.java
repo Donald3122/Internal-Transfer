@@ -1,10 +1,12 @@
 package task.internaltransfers.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import task.internaltransfers.dto.AccountStatementDto;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public interface StatementService {
-    List<AccountStatementDto> getAccountStatement(String accountNumber, LocalDateTime fromDate, LocalDateTime toDate);
+    Page<AccountStatementDto> getAccountStatement(String accountNumber, LocalDate fromDate, LocalDate toDate, Pageable pageable);
 }

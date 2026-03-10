@@ -1,20 +1,13 @@
 package task.internaltransfers.controller;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-import task.internaltransfers.config.repo.StatementsRepository;
-import task.internaltransfers.dto.AccountStatementDto;
 import task.internaltransfers.dto.RequestDto;
 import task.internaltransfers.dto.ResponseDto;
 import task.internaltransfers.service.CheckService;
 import task.internaltransfers.service.PayService;
 import task.internaltransfers.service.StatementService;
 
-import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")
