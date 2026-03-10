@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16
-    container_name: internal-transfers-db
+    container_name: postgres
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
