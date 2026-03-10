@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository extends JpaRepository<AccountsEntity, Integer> {
-    List<AccountsEntity> findByCustomerId(Integer customerId);
+public interface AccountRepository extends JpaRepository<AccountsEntity, Long> {
+    List<AccountsEntity> findByCustomerId(String customerId);
     AccountsEntity findByAccountNumber(String accountNumber);
 }

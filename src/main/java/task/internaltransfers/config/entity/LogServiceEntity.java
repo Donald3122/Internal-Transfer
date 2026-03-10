@@ -22,32 +22,27 @@ public class LogServiceEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "command", nullable = false)
+    @Column(name = "command", nullable = false, columnDefinition = "TEXT")
     private String command;
 
-    @Column(name = "request")
+    @Column(name = "request", columnDefinition = "TEXT")
     private String request;
 
-    @Column(name = "response")
+    @Column(name = "response", columnDefinition = "TEXT")
     private String response;
-
-    @CreationTimestamp
-    @Column(name = "log_date_time")
-    private LocalDateTime logDateTime;
-
     @Column(name = "transaction_id")
     private Long transactionId;
 
-    @Column(name = "requisite")
+    @Column(name = "requisite", columnDefinition = "TEXT")
     private String requisite;
 
-    @Column(name = "status", nullable = false)
+    @Column(name = "status", nullable = false, columnDefinition = "TEXT")
     private String status;
 
-    @Column(name = "inner_code", nullable = false)
+    @Column(name = "inner_code", nullable = false, columnDefinition = "TEXT")
     private String innerCode;
 
-    @Column(name = "inner_message", nullable = false)
+    @Column(name = "inner_message", nullable = false, columnDefinition = "TEXT")
     private String innerMessage;
 
 }

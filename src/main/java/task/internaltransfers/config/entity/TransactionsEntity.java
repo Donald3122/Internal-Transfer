@@ -21,9 +21,11 @@ public class TransactionsEntity {
     @Column(name = "id")
     private long id;
     @Column(name = "from_amount")
-    private BigDecimal from_amount;
+    private BigDecimal fromAmount;
     @Column(name = "to_amount")
-    private BigDecimal to_amount;
+    private BigDecimal toAmount;
+    @Column(name = "balance_after")
+    private BigDecimal balanceAfter;
     @CreationTimestamp
     @Column(name = "created")
     private LocalDateTime created;

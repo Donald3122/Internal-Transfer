@@ -16,11 +16,11 @@ public class RequestDto {
     @JsonProperty("fromAccount")
     private String fromAccount;
     @JsonProperty("fromCurrency")
-    private int fromCurrency;
+    private Long fromCurrency;
     @JsonProperty("toAccount")
     private String toAccount;
     @JsonProperty("toCurrency")
-    private int toCurrency;
+    private Long toCurrency;
     @JsonProperty("transaction")
     private String transaction;
     @JsonProperty("amount")

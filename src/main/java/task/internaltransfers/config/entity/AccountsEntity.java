@@ -35,6 +35,6 @@ public class AccountsEntity {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
     @Column(name = "customer_id")
-    private Integer customerId;
+    private String  customerId;
 
 }

@@ -25,7 +25,7 @@ public class PaymentServiceImpl implements PaymentService {
                 .operatorPaymentId(requestDto.getTransaction())
                 .amount(requestDto.getAmount())
                 .status("Pending")
-                .currencyId(requestDto.getFromCurrency())
+                .currencyId(Math.toIntExact(requestDto.getFromCurrency()))
                 .build();
         return paymentRepository.save(payments);
     }
